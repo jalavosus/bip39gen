@@ -8,7 +8,7 @@ builds:
   -
     id: bip39gen
 
-    binary: main
+    binary: bip39gen
 
     ldflags:
       - -s -w
@@ -21,6 +21,12 @@ builds:
 
     goarch:
       - amd64
+      - arm
+      - arm64
+
+    goarm:
+      - '6'
+      - '7'
 
 archives:
   -
@@ -42,7 +48,11 @@ checksum:
 
 signs:
   -
-    artifacts: checksum
+    artifacts: all
+
+    id: bip39gen
+
+    cmd: gpg2
 
     args:
       - "--batch"
