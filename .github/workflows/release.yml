@@ -7,7 +7,7 @@ on:
 
 jobs:
   release:
-    uses: jalavosus/workflows/.github/workflows/go-release-goreleaser.yml@v1.2.1
+    uses: jalavosus/workflows/.github/workflows/go-release-goreleaser.yml@v1.3.0
     with:
       go_version:         "1.18.x"
       goreleaser_version: "latest"
