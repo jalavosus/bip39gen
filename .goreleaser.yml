@@ -1,0 +1,68 @@
+# Documentation at http://goreleaser.com
+project_name: bip39gen
+
+env:
+  - CGO_ENABLED=0
+
+builds:
+  -
+    id: bip39gen
+
+    binary: main
+
+    ldflags:
+      - -s -w
+
+    main: ./cmd
+
+    goos:
+      - linux
+      - darwin
+
+    goarch:
+      - amd64
+
+archives:
+  -
+    id: bip39gen
+
+    builds:
+      - bip39gen
+
+    format: binary
+
+release:
+  name_template: "{{.ProjectName}}-{{.Version}}"
+  github:
+    owner: jalavosus
+    name: bip39gen
+
+checksum:
+  name_template: 'checksums.txt'
+
+signs:
+  -
+    artifacts: checksum
+
+    args:
+      - "--batch"
+      - "-u"
+      - "{{ .Env.GPG_FINGERPRINT }}"
+      - "--output"
+      - "${signature}"
+      - "--detach-sign"
+      - "${artifact}"
+
+changelog:
+  use:  github
+
+  # Sorts the changelog by the commit's messages.
+  # Could either be asc, desc or empty
+  # Default is empty
+  sort: asc
+
+  filters:
+    exclude:
+      - '\[ci release\]'
+      - '^docs:'
+      - '^test:'
