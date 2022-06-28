@@ -21,6 +21,23 @@ jobs:
           gpg_private_key: ${{ secrets.GPG_SECRET_KEY }}
           passphrase:      ${{ secrets.GPG_PASSWORD }}
 
+      - name: Install Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: 1.18.x
+
+      - name: Go modules cache
+        id: mod_cache
+        uses: actions/cache@v3
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go118-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go118-
+
+      - name: Go Mod Download
+        run: go mod download
+
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v3.0.0
         with:
