@@ -7,11 +7,10 @@ on:
 
 jobs:
   release:
-    uses: jalavosus/workflows/.github/workflows/go-release-goreleaser.yml@v1.3.0
+    uses: jalavosus/workflows/.github/workflows/go-release-goreleaser.yml@v1.5.1
     with:
-      go_version:         "1.18.x"
-      goreleaser_version: "latest"
+      go-version:         "1.18.x"
+      goreleaser-version: "latest"
     secrets:
-      token:          ${{ secrets.TAG_PAT }}
-      gpg_secret_key: ${{ secrets.GPG_SECRET_KEY }}
-      gpg_password:   ${{ secrets.GPG_PASSWORD }}
+      gpg-secret-key: ${{ secrets.GPG_SECRET_KEY }}
+      gpg-password:   ${{ secrets.GPG_PASSWORD }}
