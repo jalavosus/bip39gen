@@ -1,6 +1,6 @@
 module github.com/jalavosus/bip39gen
 
-go 1.18
+go 1.19
 
 require (
 	github.com/btcsuite/btcd v0.23.1 // indirect
