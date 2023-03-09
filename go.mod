@@ -15,7 +15,7 @@ require (
 	github.com/btcsuite/btcd/btcutil v1.1.1
 	github.com/ghodss/yaml v1.0.0
 	github.com/jalavosus/hdwallet-go v1.3.0
-	github.com/naoina/toml v0.1.2-0.20170918210437-9fafd6967416
+	github.com/naoina/toml v0.1.2-0.20220808084321-5b37ad7d4c47
 	github.com/urfave/cli/v2 v2.10.4-0.20220624115204-d29120f08ba4
 )
 
