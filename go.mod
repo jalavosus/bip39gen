@@ -16,7 +16,8 @@ require (
 	github.com/ghodss/yaml v1.0.0
 	github.com/jalavosus/hdwallet-go v1.3.0
 	github.com/naoina/toml v0.1.2-0.20170918210437-9fafd6967416
-	github.com/urfave/cli/v2 v2.10.4-0.20220624115204-d29120f08ba4
+	github.com/urfave/cli/v2 v2.27.1
+	github.com/urfave/cli/v3 v3.0.0-alpha9
 )
 
 require (
